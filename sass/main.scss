@@ -83,61 +83,64 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: 4rem;
-  /* font-size: 1.2rem;
-  letter-spacing: 3px; */
-  padding: 1.5rem 4rem;
-  border-radius: 4rem;
-  transition: all 0.2s; /*all properties enabled to animate on initial state*/
-  position: relative;
-}
+.btn {
 
-.btn:hover {
-  transform: translateY(-3px); /*negative number sends object up*/
-  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.208); /* across, down, blur */
-}
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 4rem;
+    /* font-size: 1.2rem;
+    letter-spacing: 3px; */
+    padding: 1.5rem 4rem;
+    border-radius: 4rem;
+    transition: all 0.2s; /*all properties enabled to animate on initial state*/
+    position: relative;
+  }
+  
+  &:hover {
+    transform: translateY(-3px); /*negative number sends object up*/
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.208); /* across, down, blur */
+    
+    &::after {
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0; /* creates flash effect as color fades out */
+    }
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-text;
 
-.btn:active {
-  transform: translateY(-1px);
-}
-
-.btn--white {
-  background-color: $color-white;
-  color: $color-text;
-}
-
-/*creates a "copy" of the element for effect */
-.btn::after {
-  content: ""; /* mimics content established above */
-  display: inline-block; /* same properties as real button */
-  height: 100%;
-  width: 100%; /* of parent (real button) */
-  border-radius: 4rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* hides behind parent element until hover */
-  transition: all 1s;
-}
-
-.btn--white::after {
-  background-color: $color-white;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0; /* creates flash effect as color fades out */
-}
-
-.btn--animated {
-  animation: moveInBottom 3s ease-out 1;
-  /* animation-fill-mode: backwards; */ /*doesn't seem to matter?*/
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  
+  /*creates a "copy" of the element for effect */
+  &::after {
+    content: ""; /* mimics content established above */
+    display: inline-block; /* same properties as real button */
+    height: 100%;
+    width: 100%; /* of parent (real button) */
+    border-radius: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* hides behind parent element until hover */
+    transition: all 1s;
+  }  
+ 
+  &--animated {
+    animation: moveInBottom 3s ease-out 1;
+    /* animation-fill-mode: backwards; */ /*doesn't seem to matter?*/
+  }  
 }
 
 @keyframes moveInLeft {
