@@ -24,11 +24,10 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
 
 .header__logo {
   height: 3.5rem; }
@@ -80,7 +79,7 @@ body {
 .btn:hover {
   transform: translateY(-3px);
   /*negative number sends object up*/
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.208);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.208);
   /* across, down, blur */ }
 
 .btn:active {

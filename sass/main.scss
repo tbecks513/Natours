@@ -39,13 +39,15 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 }
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+
 
 .header__logo {
   height: 3.5rem;
