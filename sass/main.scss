@@ -45,42 +45,42 @@ body {
     top: 4rem;
     left: 4rem;
   }
-}
 
-.header__logo {
-  height: 3.5rem;
-}
+  &__logo {
+    height: 3.5rem;
+  }
 
-.header__text-box {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  /*centers text-block*/
-  transform: translate(-50%, -50%);
-  text-align: center;
+  &__text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    /*centers text-block*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primary {
   color: $color-white;
-}
 
-.heading-primary--main {
-  display: block; /*create line breaks after & take up all available space*/
-  letter-spacing: 3.7rem;
-  padding-left: 2.5rem; /*this may not work later for centering */
-  font-size: 9rem;
-  animation-delay: 1s;
-  animation: moveInLeft ease-out 3s;
-}
+  &--main {
+    display: block; /*create line breaks after & take up all available space*/
+    letter-spacing: 3.7rem;
+    padding-left: 2.5rem; /*this may not work later for centering */
+    font-size: 9rem;
+    animation-delay: 1s;
+    animation: moveInLeft ease-out 3s;
+  }
 
-.heading-primary--sub {
-  display: block;
-  font-size: 3.5rem;
-  letter-spacing: 1.3rem;
-  margin-bottom: 4rem;
+  &--sub {
+    display: block;
+    font-size: 3.5rem;
+    letter-spacing: 1.3rem;
+    margin-bottom: 4rem;
 
-  animation-delay: 1s;
-  animation: moveInRight ease-out 3s;
+    animation-delay: 1s;
+    animation: moveInRight ease-out 3s;
+  }
 }
 
 .btn:link,
