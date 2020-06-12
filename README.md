@@ -1,2 +1,2 @@
 # Natours
-Project no.1
+Responsive, animated site using Sass.
