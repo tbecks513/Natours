@@ -1,1 +1,30 @@
 //
+body {
+  font-family: "Tenali Ramakrishna", sans-serif;
+  line-height: 1.7;
+  color: $color-text;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+}
+
+.heading-primary--main {
+  display: block; /*create line breaks after & take up all available space*/
+  letter-spacing: 3.7rem;
+  padding-left: 2.5rem; /*this may not work later for centering */
+  font-size: 9rem;
+  animation-delay: 1s;
+  animation: moveInLeft ease-out 3s;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 3.5rem;
+  letter-spacing: 1.3rem;
+  margin-bottom: 4rem;
+
+  animation-delay: 1s;
+  animation: moveInRight ease-out 3s;
+}
