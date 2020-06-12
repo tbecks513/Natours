@@ -1,36 +1,15 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
 
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+@import "pages/home";
 
-$color-text: #777;
-$color-white: white;
-$color-black: blue;
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-/*sets root font size */
-html {
-  font-size: 62.5%; /* equivelant to 10rem / 16px */
-}
-
-body {
-  font-family: "Tenali Ramakrishna", sans-serif;
-  line-height: 1.7;
-  color: $color-text;
-  padding: 3rem;
-  box-sizing: border-box;
-}
+@import "components/button";
 
 .header {
   height: 95vh;
@@ -51,8 +30,6 @@ body {
     left: 4rem;
   }
 }
-
-
 
 .header__logo {
   height: 3.5rem;
@@ -90,103 +67,4 @@ body {
   animation: moveInRight ease-out 3s;
 }
 
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: 4rem;
-  /* font-size: 1.2rem;
-  letter-spacing: 3px; */
-  padding: 1.5rem 4rem;
-  border-radius: 4rem;
-  transition: all 0.2s; /*all properties enabled to animate on initial state*/
-  position: relative;
-}
 
-.btn:hover {
-  transform: translateY(-3px); /*negative number sends object up*/
-  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.208); /* across, down, blur */
-}
-
-.btn:active {
-  transform: translateY(-1px);
-}
-
-.btn--white {
-  background-color: $color-white;
-  color: $color-text;
-}
-
-/*creates a "copy" of the element for effect */
-.btn::after {
-  content: ""; /* mimics content established above */
-  display: inline-block; /* same properties as real button */
-  height: 100%;
-  width: 100%; /* of parent (real button) */
-  border-radius: 4rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* hides behind parent element until hover */
-  transition: all 1s;
-}
-
-.btn--white::after {
-  background-color: $color-white;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0; /* creates flash effect as color fades out */
-}
-
-.btn--animated {
-  animation: moveInBottom 3s ease-out 1;
-  /* animation-fill-mode: backwards; */ /*doesn't seem to matter?*/
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  80% {
-    transform: translateX(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translateX(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
