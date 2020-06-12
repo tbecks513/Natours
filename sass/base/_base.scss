@@ -1,0 +1,21 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*sets root font size */
+html {
+  font-size: 62.5%; /* equivelant to 10rem / 16px */
+}
+
+body {
+  font-family: "Tenali Ramakrishna", sans-serif;
+  line-height: 1.7;
+  color: $color-text;
+  padding: 3rem;
+  box-sizing: border-box;
+}
