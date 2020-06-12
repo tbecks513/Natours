@@ -17,6 +17,84 @@ body {
   padding: 3rem;
   box-sizing: border-box; }
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 4rem;
+  /* font-size: 1.2rem;
+    letter-spacing: 3px; */
+  padding: 1.5rem 4rem;
+  border-radius: 4rem;
+  transition: all 0.2s;
+  /*all properties enabled to animate on initial state*/
+  position: relative;
+  /*creates a "copy" of the element for effect */ }
+  .btn:link:hover, .btn:visited:hover {
+    transform: translateY(-3px);
+    /*negative number sends object up*/
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.208);
+    /* across, down, blur */ }
+    .btn:link:hover::after, .btn:visited:hover::after {
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0;
+      /* creates flash effect as color fades out */ }
+  .btn:link:active, .btn:visited:active {
+    transform: translateY(-1px); }
+    .btn:link:active--white, .btn:visited:active--white {
+      background-color: white;
+      color: #777; }
+      .btn:link:active--white--white::after, .btn:visited:active--white--white::after {
+        background-color: white; }
+  .btn:link::after, .btn:visited::after {
+    content: "";
+    /* mimics content established above */
+    display: inline-block;
+    /* same properties as real button */
+    height: 100%;
+    width: 100%;
+    /* of parent (real button) */
+    border-radius: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* hides behind parent element until hover */
+    transition: all 1s; }
+  .btn:link--animated, .btn:visited--animated {
+    animation: moveInBottom 3s ease-out 1;
+    /* animation-fill-mode: backwards; */
+    /*doesn't seem to matter?*/ }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/img/hero.jpg);
@@ -60,89 +138,3 @@ body {
   margin-bottom: 4rem;
   animation-delay: 1s;
   animation: moveInRight ease-out 3s; }
-
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: 4rem;
-  /* font-size: 1.2rem;
-  letter-spacing: 3px; */
-  padding: 1.5rem 4rem;
-  border-radius: 4rem;
-  transition: all 0.2s;
-  /*all properties enabled to animate on initial state*/
-  position: relative; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  /*negative number sends object up*/
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.208);
-  /* across, down, blur */ }
-
-.btn:active {
-  transform: translateY(-1px); }
-
-.btn--white {
-  background-color: white;
-  color: #777; }
-
-/*creates a "copy" of the element for effect */
-.btn::after {
-  content: "";
-  /* mimics content established above */
-  display: inline-block;
-  /* same properties as real button */
-  height: 100%;
-  width: 100%;
-  /* of parent (real button) */
-  border-radius: 4rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* hides behind parent element until hover */
-  transition: all 1s; }
-
-.btn--white::after {
-  background-color: white; }
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0;
-  /* creates flash effect as color fades out */ }
-
-.btn--animated {
-  animation: moveInBottom 3s ease-out 1;
-  /* animation-fill-mode: backwards; */
-  /*doesn't seem to matter?*/ }
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
