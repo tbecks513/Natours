@@ -15,7 +15,7 @@
 
     &:hover {
       transform: translateY(-3px); /*negative number sends object up*/
-      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.208); /* across, down, blur */
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* across, down, blur */
 
       &::after {
         transform: scaleX(1.5) scaleY(1.6);
@@ -25,14 +25,15 @@
 
     &:active {
       transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1 rem rgba($color-black, 0.2);
+    }
 
-      &--white {
+    &--white {
+      background-color: $color-white;
+      color: $color-text;
+
+      &--white::after {
         background-color: $color-white;
-        color: $color-text;
-
-        &--white::after {
-          background-color: $color-white;
-        }
       }
     }
 
@@ -52,6 +53,7 @@
 
     &--animated {
       animation: moveInBottom 3s ease-out 1;
+      animation-fill-mode: backwards;
       /* animation-fill-mode: backwards; */ /*doesn't seem to matter?*/
     }
   }
