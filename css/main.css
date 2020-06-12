@@ -11,102 +11,7 @@ html {
   /* equivelant to 10rem / 16px */ }
 
 body {
-  font-family: "Tenali Ramakrishna", sans-serif;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    /*centers text-block*/
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: white; }
-  .heading-primary--main {
-    display: block;
-    /*create line breaks after & take up all available space*/
-    letter-spacing: 3.7rem;
-    padding-left: 2.5rem;
-    /*this may not work later for centering */
-    font-size: 9rem;
-    animation-delay: 1s;
-    animation: moveInLeft ease-out 3s; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 3.5rem;
-    letter-spacing: 1.3rem;
-    margin-bottom: 4rem;
-    animation-delay: 1s;
-    animation: moveInRight ease-out 3s; }
-
-.btn {
-  /*creates a "copy" of the element for effect */ }
-  .btn:link, .btn:visited {
-    display: inline-block;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-top: 4rem;
-    /* font-size: 1.2rem;
-    letter-spacing: 3px; */
-    padding: 1.5rem 4rem;
-    border-radius: 4rem;
-    transition: all 0.2s;
-    /*all properties enabled to animate on initial state*/
-    position: relative; }
-  .btn:hover {
-    transform: translateY(-3px);
-    /*negative number sends object up*/
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.208);
-    /* across, down, blur */ }
-    .btn:hover::after {
-      transform: scaleX(1.5) scaleY(1.6);
-      opacity: 0;
-      /* creates flash effect as color fades out */ }
-  .btn:active {
-    transform: translateY(-1px); }
-  .btn--white {
-    background-color: white;
-    color: #777; }
-    .btn--white::after {
-      background-color: white; }
-  .btn::after {
-    content: "";
-    /* mimics content established above */
-    display: inline-block;
-    /* same properties as real button */
-    height: 100%;
-    width: 100%;
-    /* of parent (real button) */
-    border-radius: 4rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    /* hides behind parent element until hover */
-    transition: all 1s; }
-  .btn--animated {
-    animation: moveInBottom 3s ease-out 1;
-    /* animation-fill-mode: backwards; */
-    /*doesn't seem to matter?*/ }
 
 @keyframes moveInLeft {
   0% {
@@ -135,3 +40,122 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+body {
+  font-family: "Tenali Ramakrishna", sans-serif;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: white; }
+
+.heading-primary--main {
+  display: block;
+  /*create line breaks after & take up all available space*/
+  letter-spacing: 3.7rem;
+  padding-left: 2.5rem;
+  /*this may not work later for centering */
+  font-size: 9rem;
+  animation-delay: 1s;
+  animation: moveInLeft ease-out 3s; }
+
+.heading-primary--sub {
+  display: block;
+  font-size: 3.5rem;
+  letter-spacing: 1.3rem;
+  margin-bottom: 4rem;
+  animation-delay: 1s;
+  animation: moveInRight ease-out 3s; }
+
+.btn {
+  /*creates a "copy" of the element for effect */ }
+  .btn:link, .btn:visited {
+    display: inline-block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 4rem;
+    /* font-size: 1.2rem;
+    letter-spacing: 3px; */
+    padding: 1.5rem 4rem;
+    border-radius: 4rem;
+    transition: all 0.2s;
+    /*all properties enabled to animate on initial state*/
+    position: relative; }
+  .btn:hover {
+    transform: translateY(-3px);
+    /*negative number sends object up*/
+    box-shadow: 0 1rem 2rem rgba(0, 0, 255, 0.2);
+    /* across, down, blur */ }
+    .btn:hover::after {
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0;
+      /* creates flash effect as color fades out */ }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1 rem rgba(0, 0, 255, 0.2); }
+  .btn--white {
+    background-color: white;
+    color: #777; }
+    .btn--white--white::after {
+      background-color: white; }
+  .btn::after {
+    content: "";
+    /* mimics content established above */
+    display: inline-block;
+    /* same properties as real button */
+    height: 100%;
+    width: 100%;
+    /* of parent (real button) */
+    border-radius: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* hides behind parent element until hover */
+    transition: all 1s; }
+  .btn--animated {
+    animation: moveInBottom 3s ease-out 1;
+    animation-fill-mode: backwards;
+    /* animation-fill-mode: backwards; */
+    /*doesn't seem to matter?*/ }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    /*centers text-block*/
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .header-primary {
+    color: white; }
+    .header-primary--main {
+      display: block;
+      /*create line breaks after & take up all available space*/
+      letter-spacing: 3.7rem;
+      padding-left: 2.5rem;
+      /*this may not work later for centering */
+      font-size: 9rem;
+      animation-delay: 1s;
+      animation: moveInLeft ease-out 3s; }
+    .header-primary--sub {
+      display: block;
+      font-size: 3.5rem;
+      letter-spacing: 1.3rem;
+      margin-bottom: 4rem;
+      animation-delay: 1s;
+      animation: moveInRight ease-out 3s; }
