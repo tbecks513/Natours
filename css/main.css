@@ -70,35 +70,37 @@ body {
 
 .btn {
   /*creates a "copy" of the element for effect */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     display: inline-block;
     font-size: 2.5rem;
     text-transform: uppercase;
     text-decoration: none;
-    margin-top: 4rem;
     /* font-size: 1.2rem;
-    letter-spacing: 3px; */
+      letter-spacing: 3px; */
     padding: 1.5rem 4rem;
-    border-radius: 4rem;
+    border-radius: 10rem;
     transition: all 0.2s;
     /*all properties enabled to animate on initial state*/
-    position: relative; }
+    position: relative;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     transform: translateY(-3px);
     /*negative number sends object up*/
     box-shadow: 0 1rem 2rem rgba(0, 0, 255, 0.2);
     /* across, down, blur */ }
     .btn:hover::after {
-      transform: scaleX(1.5) scaleY(1.6);
+      transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
       /* creates flash effect as color fades out */ }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1 rem rgba(0, 0, 255, 0.2); }
   .btn--white {
     background-color: white;
     color: #777; }
-    .btn--white--white::after {
+    .btn--white::after {
       background-color: white; }
   .btn::after {
     content: "";
@@ -108,7 +110,7 @@ body {
     height: 100%;
     width: 100%;
     /* of parent (real button) */
-    border-radius: 4rem;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
