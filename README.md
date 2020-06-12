@@ -1,2 +1,2 @@
 # Natours
-Udemy course #1
+Project no.1
