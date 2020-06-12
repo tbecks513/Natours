@@ -45,38 +45,39 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-.btn:link, .btn:visited {
-  display: inline-block;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: 4rem;
-  /* font-size: 1.2rem;
-    letter-spacing: 3px; */
-  padding: 1.5rem 4rem;
-  border-radius: 4rem;
-  transition: all 0.2s;
-  /*all properties enabled to animate on initial state*/
-  position: relative;
+.btn {
   /*creates a "copy" of the element for effect */ }
-  .btn:link:hover, .btn:visited:hover {
+  .btn:link, .btn:visited {
+    display: inline-block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 4rem;
+    /* font-size: 1.2rem;
+    letter-spacing: 3px; */
+    padding: 1.5rem 4rem;
+    border-radius: 4rem;
+    transition: all 0.2s;
+    /*all properties enabled to animate on initial state*/
+    position: relative; }
+  .btn:hover {
     transform: translateY(-3px);
     /*negative number sends object up*/
     box-shadow: 0 1rem 2rem rgba(0, 0, 255, 0.2);
     /* across, down, blur */ }
-    .btn:link:hover::after, .btn:visited:hover::after {
+    .btn:hover::after {
       transform: scaleX(1.5) scaleY(1.6);
       opacity: 0;
       /* creates flash effect as color fades out */ }
-  .btn:link:active, .btn:visited:active {
+  .btn:active {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1 rem rgba(0, 0, 255, 0.2); }
-  .btn:link--white, .btn:visited--white {
+  .btn--white {
     background-color: white;
     color: #777; }
-    .btn:link--white--white::after, .btn:visited--white--white::after {
+    .btn--white--white::after {
       background-color: white; }
-  .btn:link::after, .btn:visited::after {
+  .btn::after {
     content: "";
     /* mimics content established above */
     display: inline-block;
@@ -91,7 +92,7 @@ body {
     z-index: -1;
     /* hides behind parent element until hover */
     transition: all 1s; }
-  .btn:link--animated, .btn:visited--animated {
+  .btn--animated {
     animation: moveInBottom 3s ease-out 1;
     animation-fill-mode: backwards;
     /* animation-fill-mode: backwards; */

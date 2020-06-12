@@ -12,7 +12,7 @@
     border-radius: 4rem;
     transition: all 0.2s; /*all properties enabled to animate on initial state*/
     position: relative;
-
+  }
     &:hover {
       transform: translateY(-3px); /*negative number sends object up*/
       box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* across, down, blur */
@@ -57,4 +57,4 @@
       /* animation-fill-mode: backwards; */ /*doesn't seem to matter?*/
     }
   }
-}
+
