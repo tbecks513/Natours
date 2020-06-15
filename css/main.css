@@ -72,17 +72,15 @@ body {
   /*creates a "copy" of the element for effect */ }
   .btn, .btn:link, .btn:visited {
     display: inline-block;
+    position: relative;
+    border: none;
     font-size: 2.5rem;
     text-transform: uppercase;
     text-decoration: none;
-    /* font-size: 1.2rem;
-      letter-spacing: 3px; */
     padding: 1.5rem 4rem;
     border-radius: 10rem;
     transition: all 0.2s;
     /*all properties enabled to animate on initial state*/
-    position: relative;
-    border: none;
     cursor: pointer; }
   .btn:hover {
     transform: translateY(-3px);
