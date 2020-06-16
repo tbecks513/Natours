@@ -1,2 +1,2 @@
 # Natours
-Udemy course #1
+Responsive, animated site using Sass.
