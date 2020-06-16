@@ -68,6 +68,10 @@ body {
   animation-delay: 1s;
   animation: moveInRight ease-out 3s; }
 
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem; }
+
 .btn {
   /*creates a "copy" of the element for effect */ }
   .btn, .btn:link, .btn:visited {
